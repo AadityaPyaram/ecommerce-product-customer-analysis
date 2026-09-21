@@ -26,8 +26,23 @@ GROUP BY product_category)
 SELECT product_category, total_revenue,
 RANK() OVER(ORDER BY total_revenue DESC)
 FROM category_sales;
+
+SELECT
+    ROUND(SUM(CASE WHEN product_category = 'Electronics' THEN total_amount END) * 100.0 / SUM(total_amount), 2) AS revenue_share_pct,
+    ROUND(SUM(product_category = 'Electronics') * 100.0 / COUNT(*), 2) AS order_share_pct
+FROM customer_behavior;
+
+SELECT ROUND(SUM(total_revenue) * 100.0 / (SELECT SUM(total_amount) FROM customer_behavior), 2) AS top3_revenue_pct
+FROM (
+    SELECT SUM(total_amount) AS total_revenue
+    FROM customer_behavior
+    GROUP BY product_category
+    ORDER BY total_revenue DESC
+    LIMIT 3
+) t;
 -- Electronics, Home&Garden and Sports
 -- Electronics is about 48% of revenue, so there's concentration risk.
+
 
 -- Which cities generate the most sales?
 
@@ -39,6 +54,10 @@ GROUP BY city)
 SELECT city, total_revenue,
 RANK() OVER(ORDER BY total_revenue DESC)
 FROM CTE;
+
+SELECT ROUND(SUM(total_amount) * 100.0 / (SELECT SUM(total_amount) FROM customer_behavior), 2) AS istanbul_share_pct
+FROM customer_behavior
+WHERE city = 'istanbul';
 -- istanbul, ankara, izmir are the cities that generate most sales
 -- Istanbul alone is about 26% of sales.
 
