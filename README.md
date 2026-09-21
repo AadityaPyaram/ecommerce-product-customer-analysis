@@ -491,8 +491,8 @@ This contains the 13 business-analysis sections and their SQL implementations.
 
 The project produced several major business observations:
 
-1. **Electronics is the largest sales-generating category**, followed by Home & Garden and Sports.
-2. **Istanbul is the largest sales-generating city**, followed by Ankara and Izmir.
+1. **Electronics is the largest sales-generating category**, followed by Home & Garden and Sports. Electronics is **48%** of revenue from about **12%** of orders, and the top 3 categories are **81%**.
+2. **Istanbul is the largest sales-generating city**, followed by Ankara and Izmir. Istanbul alone is **26%** of sales.
 3. **July 2023 recorded the strongest MoM sales growth**, while February 2024 recorded the largest monthly decline.
 4. **Returning customers generate the majority of total revenue**, mainly because they account for far more orders; their AOV is slightly lower than non-returning customers.
 5. **Average revenue per customer rises sharply with purchase frequency**, even though the low-frequency segment contributes the most total revenue because it contains the most customers.
