@@ -51,7 +51,6 @@ Fields include: `Order_ID`, `Customer_ID`, `Date`, `Age`, `Gender`, `City`, `Pro
 
 - **MySQL** — database creation, cleaning, validation and analysis
 - **SQL** — CTEs, aggregation, CASE, window functions, date functions, ranking and MoM analysis
-- **Tableau** — dashboarding and visual communication
 - **CSV** — source data
 
 ---
@@ -143,6 +142,7 @@ Analysis performed:
 
 Key result:
 
+<img src="screenshots/categories_contribution.png" width="500">
 
 
 The leading sales categories are:
@@ -164,6 +164,8 @@ Analysis performed:
 
 Top sales-generating cities:
 
+<img src="screenshots/cities_generating_most_sales.png" width="500">
+
 - **Istanbul** — 5,646,595.78
 - **Ankara** — 3,052,443.10
 - **Izmir** — 2,651,743.92
@@ -181,6 +183,8 @@ Analysis performed:
 
 Key observations:
 
+<img src="screenshots/slaes_performance_mom.png" width="500">
+
 - Strongest MoM sales increase: **July 2023 (+12.97%)**
 - Another strong increase: **December 2023 (+9.66%)**
 - Largest MoM decline: **February 2024 (-10.80%)**
@@ -197,6 +201,8 @@ Analysis performed:
 - Calculated monthly percentage change
 
 Key observations:
+
+<img src="screenshots/order_volume_mom.png" width="500">
 
 - Order volume dropped sharply from **May to June 2023**
 - Strong recovery occurred from **June to July 2023**
@@ -243,6 +249,8 @@ Analysis performed:
 
 Top customer by sales:
 
+<img src="screenshots/high_value_customers.png" width="500">
+
 - **CUST_01573** — 50,628.15
 - **CUST_00197** — 47,324.23
 - **CUST_03795** — 42,480.02
@@ -263,11 +271,7 @@ Customers were grouped based on total order frequency:
 
 Results:
 
-| Frequency Group | Customers | Total Sales | Avg. Sales / Customer |
-|---|---:|---:|---:|
-| Low | 3,155 | 8,172,611.67 | 2,590.37 |
-| Moderate | 1,319 | 7,973,293.08 | 6,044.95 |
-| High | 526 | 5,633,147.84 | 10,709.41 |
+<img src="screenshots/frequency_purchases.png" width="500">
 
 Key finding:
 
@@ -286,6 +290,8 @@ Discount Rate = Discount Amount / (Unit Price × Quantity) × 100
 ```
 
 Discount intensity across categories is relatively similar:
+
+<img src="screenshots/rely_on_discount.png" width="500">
 
 - Highest: **Food (~5.38%)**
 - Beauty: **~5.36%**
@@ -314,16 +320,7 @@ Analysis performed:
 
 Key results:
 
-| Category | Sales Rank | Quantity Rank | Sales / Unit |
-|---|---:|---:|---:|
-| Electronics | 1 | 6 | 1,669.89 |
-| Home & Garden | 2 | 7 | 653.76 |
-| Sports | 3 | 1 | 467.49 |
-| Fashion | 4 | 8 | 259.47 |
-| Toys | 5 | 5 | 160.91 |
-| Beauty | 6 | 3 | 105.79 |
-| Food | 7 | 4 | 66.14 |
-| Books | 8 | 2 | 53.58 |
+<img src="screenshots/high_sales_low_quantity.png" width="500">
 
 Key finding:
 
@@ -342,12 +339,7 @@ Delivery speed was grouped into four bands:
 
 Average ratings:
 
-| Delivery Group | Avg. Rating |
-|---|---:|
-| Fast | 3.902 |
-| Late | 3.902 |
-| Very late | 3.876 |
-| Extremely late | 3.843 |
+<img src="screenshots/delivery_time_rating.png" width='500'>
 
 Key finding:
 
@@ -367,6 +359,8 @@ Analysis performed:
 
 Key observation:
 
+<img src="screenshots/best_sales_low_delivery.png" width="500">
+
 > Istanbul and Ankara generate the highest sales, while Ankara has slightly slower-than-average delivery performance.
 
 Overall average delivery time is approximately **6.50 days**; Ankara is approximately **6.56 days**.
@@ -383,11 +377,7 @@ Session duration was grouped into:
 
 Results:
 
-| Session Group | Orders | Avg. Order Value |
-|---|---:|---:|
-| Very low | 64 | 1,427.69 |
-| Low | 6,016 | 1,310.67 |
-| High | 10,969 | 1,258.34 |
+<img src="screenshots/long_session_customers.png" width="500">
 
 Key finding:
 
@@ -443,43 +433,7 @@ The project demonstrates practical use of the following SQL concepts:
 ---
 
 
-# 6. Result Screenshots & Documentation
-
-The SQL results can be documented using screenshots of the MySQL result grid. This is useful for showing the actual outputs of the business analyses in the GitHub README rather than recreating tables manually in Markdown.
-
-### Recommended folder
-
-```text
-screenshots/
-├── q01-overall-performance.png
-├── q02-category-sales.png
-├── q03-city-sales.png
-├── q04-mom-sales.png
-├── q05-mom-orders.png
-├── q06-returning-customers.png
-├── q07-top-customers.png
-├── q08-purchase-frequency.png
-├── q09-discount-analysis.png
-├── q10-sales-vs-quantity.png
-├── q11-delivery-vs-rating.png
-├── q12-city-delivery.png
-└── q13-session-duration.png
-```
-
-### Adding a result image to the README
-
-After saving a screenshot, embed it with standard GitHub Markdown:
-
-```markdown
-![Overall Performance](screenshots/q01-overall-performance.png)
-```
-
-You can place the image directly below the corresponding business-question section.
-
-> **Tip:** Keep screenshots tightly cropped around the result grid and make the text large enough to read. You do not need to screenshot the entire VS Code window.
-
-
-# 7. Project Structure
+# 5. Project Structure
 
 ```text
 E-Commerce-Customer-Behavior-Analytics/
@@ -498,7 +452,7 @@ E-Commerce-Customer-Behavior-Analytics/
 
 ---
 
-# 8. How to Reproduce the Project
+# 6. How to Reproduce the Project
 
 ## Step 1 — Create the database and load the raw CSV
 
@@ -533,7 +487,7 @@ This contains the 13 business-analysis sections and their SQL implementations.
 
 
 
-# 9. Key Takeaways
+# 7. Key Takeaways
 
 The project produced several major business observations:
 
@@ -549,7 +503,7 @@ The project produced several major business observations:
 
 ---
 
-# 10. Limitations
+# 8. Limitations
 
 - The dataset covers **2023-01-01 through 2024-03-25**, so long-term multi-year trend conclusions should be avoided.
 - The `Is_Returning_Customer` indicator is treated as a provided field rather than independently reconstructed from transaction history.
@@ -560,7 +514,7 @@ The project produced several major business observations:
 
 ---
 
-# 11. Conclusion
+# 9. Conclusion
 
 This project demonstrates an end-to-end workflow for a practical Data Analyst task:
 
