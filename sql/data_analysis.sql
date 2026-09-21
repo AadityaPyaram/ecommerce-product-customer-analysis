@@ -27,6 +27,7 @@ SELECT product_category, total_revenue,
 RANK() OVER(ORDER BY total_revenue DESC)
 FROM category_sales;
 -- Electronics, Home&Garden and Sports
+-- Electronics is about 48% of revenue, so there's concentration risk.
 
 -- Which cities generate the most sales?
 
@@ -39,6 +40,7 @@ SELECT city, total_revenue,
 RANK() OVER(ORDER BY total_revenue DESC)
 FROM CTE;
 -- istanbul, ankara, izmir are the cities that generate most sales
+-- Istanbul alone is about 26% of sales.
 
 -- How does sales performance change month over month?
 SELECT * FROM customer_behavior
@@ -89,6 +91,7 @@ GROUP BY is_returning_customer;
 -- the total amount of sales is far more for returning customers - 1,91,90,720.46 than for non returning customers - 23,88,332.13
 -- the total number of orders of returning customers is 15,039 while of non returning it is 2010
 -- Returning customers generate substantially more total revenue because they account for far more orders, but their average order value is slightly lower than that of non-returning customers.
+-- Returning customers make up about 88% of orders and revenue, so retention matters more than acquisition.
 
 
 -- Who are the highest-value customers?
